@@ -14,10 +14,18 @@ const App = () => {
         neutral: 0,
         bad: 0
     }
+
+    
+    
+
+    // const updateFeedback = feedbackType => {
+    //     // Тут використовуй сеттер, щоб оновити стан
+    // }
+
     return (
         <>
             <Description />
-            <Options />
+            <Options feedback={feedBackState}/>
             <Feedback feedback={feedBackState} />
         </>
     );

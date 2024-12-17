@@ -1,5 +1,6 @@
 // import style from './Feedback.module.css'
 
+
 const Feedback = ({feedback}) => { // tut bilo {items}
     return (
         <div>
