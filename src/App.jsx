@@ -1,25 +1,24 @@
-import Profile from './components/Profile/Profile';
-import FriendList from './components/FriendList/FriendList';
-import TransactionHistory from './components/TransactionHistory/TransactionHistory';
+import Description from './components/Description/Description';
+import Feedback from './components/Feedback/Feedback';
+import Options from './components/Options/Options';
 
 
-import userData from './userData.json';
-import friends from './friends.json';
-import transactions from './transactions.json';
+// import userData from './userData.json';
+// import friends from './friends.json';
+// import transactions from './transactions.json';
 
 
 const App = () => { 
+    const feedBackState = {
+        good: 0,
+        neutral: 0,
+        bad: 0
+    }
     return (
         <>
-            <Profile
-                name={userData.username}
-                tag={userData.tag}
-                location={userData.location}
-                image={userData.avatar}
-                stats={userData.stats}
-            />
-            <FriendList friends={friends} />
-            <TransactionHistory items={transactions} />
+            <Description />
+            <Options />
+            <Feedback feedback={feedBackState} />
         </>
     );
 };
