@@ -1,41 +1,32 @@
 // import style from './Options.module.css';
-// import { useState } from "react";
 
-const Options = () => {
-    // const [optData, setOptData] = useState()
 
-    return (
+const Options = ({ updateFeedback, resetFeedBack, totalFeedback }) => {
+    if (totalFeedback <= 0) {
+        return (
         <>
             <div>
                 <ul>
-                    <button>Good</button>
-                    <button>Neutral</button>
-                    <button>Bad</button>
-                    {/* <button>Reset</button> */}
+                    <button onClick={()=> updateFeedback('good')}>Good</button>
+                    <button onClick={()=> updateFeedback('neutral')}>Neutral</button>
+                    <button onClick={()=> updateFeedback('bad')}>Bad</button>
                 </ul>
             </div>
         </>
-    )
+        )
+    } else {
+        return (
+            <>
+            <div>
+                <ul>
+                    <button onClick={()=> updateFeedback('good')}>Good</button>
+                    <button onClick={()=> updateFeedback('neutral')}>Neutral</button>
+                    <button onClick={()=> updateFeedback('bad')}>Bad</button>
+                    <button onClick={() => resetFeedBack()}>Reset</button>
+                </ul>
+            </div>
+        </>
+        )
+    } 
 }
-
 export default Options;
-
-//  const [good, setGood] = useState(1);
-//     const [neutral, setNeutral] = useState(1);
-//     const [bad, setBad] = useState(1);
-
-//     const handleGood = () => {
-//         setGood(prev => prev + 1);
-//         console.log('good is:', good);
-//         return good;
-//     }
-//     const handleNeutral = () => {
-//         setNeutral(prev => prev + 1);
-//         console.log('neutral is:', neutral);
-//         return neutral;
-//     }
-//     const handleBad = () => {
-//         setBad(prev => prev + 1);
-//         console.log('bad is:', bad);
-//         return bad;
-//     }
