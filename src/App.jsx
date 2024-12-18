@@ -12,15 +12,10 @@ const feedBackState = {
     }
    
 const App = () => { 
+    const savedData = JSON.parse(localStorage.getItem('data'));
 
-    const [optData, setOptData] = useState(() => {
-        const savedData = JSON.parse(localStorage.getItem('data'));
-        if (typeof savedData === "object") {
-            return savedData;
-        } else {           
-            return feedBackState;
-        };
-    });
+
+    const [optData, setOptData] = useState(savedData || feedBackState);
 
     useEffect(() => {
        localStorage.setItem('data', JSON.stringify(optData)) 
@@ -34,7 +29,7 @@ const App = () => {
     const positiveFeedBack = Math.round((optData.good / totalFeedback) * 100);
 
     const resetFeedBack = () => {
-        setOptData({good: 0, neutral: 0, bad: 0})
+        setOptData(feedBackState)
     }
 
     return (
