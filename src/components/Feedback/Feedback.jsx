@@ -1,10 +1,10 @@
-// import style from './Feedback.module.css'
+import style from './Feedback.module.css'
 
 
 const Feedback = ({ feedback, totalFeedback, positiveFeedBack }) => { 
     return (
         <div>
-            <ul>
+            <ul className={style.fblist}>
                 <li>Good: {feedback.good}</li>
                 <li>Neutral: {feedback.neutral}</li>
                 <li>Bad: {feedback.bad}</li>
